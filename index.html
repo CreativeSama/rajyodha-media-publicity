@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Rajyodha Media & Publicity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* --- General Setup --- */
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0d1117;
+        /* Changed to dark background for consistency */
+        color: #c9d1d9;
+        /* Changed default text to light */
+        scroll-behavior: smooth;
+      }
+
+      /* --- Reusable Utility Classes --- */
+      .text-accent {
+        color: #d1b11f;
+      }
+
+      .bg-accent {
+        background-color: #d1b11f;
+      }
+
+      .section-padding {
+        padding: 80px 24px;
+      }
+
+      .section-title {
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-weight: bold;
+        font-size: 2.5em;
+        color: #ffffff;
+        /* Changed to white for dark theme */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 3px solid #00aeef;
+        display: inline-block;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      /* --- Section Specific Styles --- */
+
+      /* Hero Section */
+      #hero {
+        background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop");
+      }
+
+      /* Services Section */
+      #services {
+        background-color: #161b22;
+      }
+
+      #services .section-title,
+      #services .container>p {
+        color: white;
+      }
+
+      .service-card {
+        flex: 1 1 250px;
+        background-color: #f3f4f6;
+        color: black;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .service-card .icon {
+        font-size: 2em;
+      }
+
+      .service-card .title {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      /* Clientele Section */
+      #clientele {
+        padding: 40px 20px;
+        text-align: center;
+        background-color: #161b22;
+      }
+
+      #clientele .section-title,
+      #clientele h2.subtitle {
+        color: white;
+      }
+
+      .client-logo {
+        background: #fff;
+        padding: 20px;
+        display: inline-block;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .client-logo img {
+        max-height: 80px;
+        max-width: 180px;
+        display: block;
+      }
+
+      /* Portfolio Section */
+      #portfolio {
+        background-color: #161b22;
+      }
+
+      #portfolio .section-title,
+      #portfolio p {
+        color: white;
+      }
+
+      .portfolio-grid {
+        background-color: #161b22;
+      }
+
+      .portfolio-card {
+        background-color: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 12px;
+        padding: 24px;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* About Section */
+      #about {
+        background-color: #161b22;
+      }
+
+      /* Contact Section */
+      #contact {
+        padding: 40px;
+        background-color: #161b22;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+
+      .contact-details p {
+        margin-bottom: 1em;
+      }
+
+      .contact-form-wrapper {
+        background-color: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+        color: #fff;
+        padding: 2em;
+      }
+
+      .contact-form-wrapper h2 {
+        text-align: center;
+        color: #fff;
+      }
+
+      .contact-form-wrapper input,
+      .contact-form-wrapper textarea,
+      .contact-form-wrapper select {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        background: #0d1117;
+        color: #c9d1d9;
+        border: 1px solid #30363d;
+        width: 100%;
+      }
+
+      .contact-form-wrapper label {
+        font-weight: bold;
+        color: #fff;
+        margin-top: 10px;
+        display: block;
+      }
+
+      .contact-form-wrapper button {
+        padding: 12px;
+        font-size: 16px;
+        background: #d1b11f;
+        color: #161b22;
+        font-weight: bold;
+        border-radius: 8px;
+        border: none;
+        box-shadow: 0 2px 8px rgba(30, 60, 120, 0.08);
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .contact-form-wrapper button:hover {
+        background: #b89b1a;
+      }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+  <nav class="sticky top-0 z-50 bg-[#161b22] bg-opacity-90 backdrop-filter backdrop-blur-lg border-b border-[#30363d]">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#hero" class="flex items-center gap-3 text-2xl font-bold text-white tracking-wide">
+        <img src="https://i.ibb.co/kVQtMKGY/rn-logo.jpg" alt="RN Logo" class="w-10 h-10 object-contain" />
+        Rajyodha <span class="text-accent">Media & Publicity</span>
+      </a>
+      <div class="md:hidden">
+        <button class="text-white focus:outline-none" id="menu-toggle">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6h16M4 12h16m-4 6h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="hidden md:flex md:items-center space-x-6 text-sm font-medium" id="nav-menu">
+        <a class="text-white hover:text-accent transition duration-300" href="#hero">Home</a>
+        <a class="text-white hover:text-accent transition duration-300" href="#services">Services</a>
+        <a class="text-white hover:text-accent transition duration-300" href="#clientele">Clientele</a>
+        <a class="text-white hover:text-accent transition duration-300" href="#portfolio">Portfolio</a>
+        <a class="text-white hover:text-accent transition duration-300" href="#about">About Us</a>
+        <a class="text-white hover:text-accent transition duration-300" href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div
+    class="md:hidden fixed top-0 left-0 w-full h-full bg-[#0d1117] z-40 transition-transform transform -translate-x-full"
+    id="mobile-menu-panel">
+    <div class="flex justify-end p-4">
+      <button class="text-white focus:outline-none" id="close-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-col items-center justify-center space-y-8 text-lg font-bold">
+      <a class="text-white hover:text-accent transition duration-300 mobile-nav-item" href="#hero">Home</a>
+      <a class="text-white hover:text-accent transition duration-300 mobile-nav-item" href="#services">Services</a>
+      <a class="text-white hover:text-accent transition duration-300 mobile-nav-item" href="#clientele">Clientele</a>
+      <a class="text-white hover:text-accent transition duration-300 mobile-nav-item" href="#portfolio">Portfolio</a>
+      <a class="text-white hover:text-accent transition duration-300 mobile-nav-item" href="#about">About Us</a>
+      <a class="text-white hover:text-accent transition duration-300 mobile-nav-item" href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="relative section-padding min-h-screen flex items-center justify-center bg-cover bg-center"
+      id="hero">
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="relative container mx-auto text-center">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+          Elevate Your Presence with
+          <span class="text-accent">Publicity</span> That Matters
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          Rajyodha Media is your strategic partner for impactful media
+          publicity. We craft compelling narratives that resonate with your
+          target audience and drive tangible results.
+        </p>
+        <a class="bg-accent text-gray-900 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:scale-105"
+          href="#services">
+          Our Services
+        </a>
+      </div>
+    </section>
+
+    <section class="section-padding" id="services">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 section-title">
+          Our Services
+        </h2>
+        <p class="text-lg mb-12 max-w-3xl mx-auto">
+          We offer a comprehensive suite of services to ensure your brand gets
+          the right kind of attention.
+        </p>
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-wrap gap-5 justify-center">
+            <div class="service-card">
+              <div class="icon">🎙️</div>
+              <h3>Podcast</h3>
+            </div>
+            <div class="service-card">
+              <div class="icon">🎨</div>
+              <h3>Graphics</h3>
+            </div>
+            <div class="service-card">
+              <div class="icon">🎥</div>
+              <h3>Video Production</h3>
+            </div>
+            <div class="service-card">
+              <div class="icon">📸</div>
+              <h3>Photography</h3>
+            </div>
+            <div class="service-card">
+              <div class="icon">📱</div>
+              <h3>Social Media Marketing</h3>
+            </div>
+            <div class="service-card">
+              <div class="icon">🏛️</div>
+              <h3>Political Graphics and Marketing</h3>
+            </div>
+            <div class="service-card">
+              <div class="icon">🎧</div>
+              <h3>Podcast Studio</h3>
+            </div>
+            <div class="service-card">
+              <div class="icon">🚁</div>
+              <h3>Drone Shoot</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding" id="portfolio">
+      <div class="container mx-auto text-center">
+        <h2 class="section-title">Our Success Stories</h2>
+        <p class="text-lg mb-12 max-w-3xl mx-auto">
+          A glimpse into our past work and the clients we've helped achieve
+          their publicity goals.
+        </p>
+      </div>
+      <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 portfolio-grid">
+        <div class="portfolio-card">
+          <img alt="Project 1" class="rounded-md mb-4 w-full h-auto"
+            src="https://placehold.co/400x250/30363d/c9d1d9?text=Project+1" />
+          <h3 class="text-xl font-semibold text-white mb-2">
+            Brand Launch Campaign
+          </h3>
+          <p class="text-gray-400 text-sm">
+            Successfully launched a new tech startup, securing coverage in
+            major industry publications.
+          </p>
+        </div>
+        <div class="portfolio-card">
+          <img alt="Project 2" class="rounded-md mb-4 w-full h-auto"
+            src="https://placehold.co/400x250/30363d/c9d1d9?text=Project+2" />
+          <h3 class="text-xl font-semibold text-white mb-2">
+            Executive Profile Placement
+          </h3>
+          <p class="text-gray-400 text-sm">
+            Secured a feature interview for a CEO, positioning them as a
+            thought leader in their field.
+          </p>
+        </div>
+        <div class="portfolio-card">
+          <img alt="Project 3" class="rounded-md mb-4 w-full h-auto"
+            src="https://placehold.co/400x250/30363d/c9d1d9?text=Project+3" />
+          <h3 class="text-xl font-semibold text-white mb-2">
+            Event Publicity
+          </h3>
+          <p class="text-gray-400 text-sm">
+            Generated widespread media buzz and attendance for a national
+            conference.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="testimonials" class="section-padding bg-[#161b22]">
+      <div class="container mx-auto text-center">
+
+        <h2 class="section-title">
+          Our Podcasts & Testimonials
+        </h2>
+
+        <p class="text-lg mb-12 text-gray-400 max-w-3xl mx-auto">
+          Listen to our client's success stories and engaging podcasts.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <div class="portfolio-card">
+            <iframe src="https://www.youtube.com/embed/Ladtaj2WJPI?rel=0" title="Podcast Episode 1"
+              class="w-full aspect-video rounded-md mb-4"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+            <h3 class="text-xl font-semibold text-white">
+              Podcast Episode 1
+            </h3>
+          </div>
+
+          <div class="portfolio-card">
+            <iframe src="https://www.youtube.com/embed/Ac-c6syeriw?rel=0" title="Client Success Story"
+              class="w-full aspect-video rounded-md mb-4"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+            <h3 class="text-xl font-semibold text-white">
+              Client Success Story
+            </h3>
+          </div>
+
+          <div class="portfolio-card">
+            <iframe src="https://www.youtube.com/embed/DGptA1kZoOE?rel=0" title="Podcast Special Episode"
+              class="w-full aspect-video rounded-md mb-4"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+            <h3 class="text-xl font-semibold text-white">
+              Podcast Special Episode
+            </h3>
+          </div>
+
+          <div class="portfolio-card">
+            <iframe src="https://www.youtube.com/embed/vz3fCln3I_0?rel=0" title="Client Feature Interview"
+              class="w-full aspect-video rounded-md mb-4"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+            <h3 class="text-xl font-semibold text-white">
+              Client Feature Interview
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="clientele" class="section-padding bg-[#161b22]">
+      <div class="container mx-auto text-center">
+
+        <h2 class="section-title">Our Clientele</h2>
+        <h2 class="text-lg text-gray-400 mb-12">
+          Trusted By Leading Brands
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+
+          <div class="client-logo">
+            <img alt="Sahyadri Hospitals"
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Sahyadri_Hospitals.svg/1200px-Sahyadri_Hospitals.svg.png" />
+          </div>
+
+          <!-- Arth Kranti -->
+          <div class="client-logo p-6 bg-white rounded-xl shadow-md hover:scale-105 transition duration-300">
+            <img src="https://i.ibb.co/zH8d8LM7/arth-kranti.jpg" class="w-32 h-20 object-contain" alt="Arth Kranti">
+          </div>
+
+          <!-- Mann Shanti -->
+          <div class="client-logo p-6 bg-white rounded-xl shadow-md hover:scale-105 transition duration-300">
+            <img src="https://i.ibb.co/bMxGR1jT/mann-shanti.jpg" class="w-32 h-20 object-contain" alt="Mann Shanti">
+          </div>
+
+          <!-- Silver Leaf -->
+          <div class="client-logo p-6 bg-white rounded-xl shadow-md hover:scale-105 transition duration-300">
+            <img src="https://i.ibb.co/7hX6Mx6/silver-leaf.jpg" class="w-32 h-20 object-contain" alt="Silver Leaf">
+          </div>
+
+          <!-- Galaxy Dental -->
+          <div class="client-logo p-6 bg-white rounded-xl shadow-md hover:scale-105 transition duration-300">
+            <img src="https://i.ibb.co/xKqLh5t8/galaxy-dental.jpg" class="w-32 h-20 object-contain" alt="Galaxy Dental">
+          </div>
+
+          <!-- Doctor Boltoy -->
+          <div class="client-logo p-6 bg-white rounded-xl shadow-md hover:scale-105 transition duration-300">
+            <img src="https://i.ibb.co/yF89Bb00/doctor-boltoy.jpg" class="w-32 h-20 object-contain" alt="Doctor Boltoy">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <section class="section-padding" id="about">
+      <div class="container mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+          <img alt="Our Team" class="rounded-xl shadow-xl w-full h-auto"
+            src="https://placehold.co/400x400/30363d/c9d1d9?text=Our+Team" />
+        </div>
+        <div class="md:w-1/2 text-center md:text-left">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+            About Rajyodha Media
+          </h2>
+          <p class="text-gray-400 text-lg mb-4">
+            We are a team of passionate and experienced public relations
+            professionals dedicated to helping our clients tell their stories
+            effectively. Our approach is rooted in understanding your unique
+            goals and developing customized strategies to meet them.
+          </p>
+          <p class="text-gray-400 text-lg">
+            Our commitment to integrity, creativity, and results has made us a
+            trusted partner for businesses and individuals seeking to make a
+            lasting impact in the media landscape.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container mx-auto flex flex-wrap gap-10 items-start justify-center">
+        <div class="flex-1 min-w-[300px] contact-details">
+          <p><strong>Phone Number:</strong><br />+91-7263852727</p>
+          <p>
+            <strong>Email Us:</strong><br />
+            <a href="mailto:rajoddhamedia@gmail.com" class="inline-block hover:opacity-75">
+              <img src="https://img.icons8.com/color/48/new-post.png" alt="Email Icon" class="w-8 h-8" />
+            </a>
+          </p>
+          <p>
+            <strong>Instagram:</strong><br />
+            <a href="https://instagram.com/rajoddhamediapublicityllp" target="_blank"
+              class="inline-block hover:opacity-75">
+              <img src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram Logo" class="w-8 h-8" />
+            </a>
+          </p>
+          <p>
+            <strong>Youtube:</strong><br />
+            <a href="https://www.youtube.com/@rajoddhamediaofficial7350" target="_blank"
+              class="inline-block hover:opacity-75">
+              <img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube Logo" class="w-8 h-8" />
+            </a>
+          </p>
+          <p>
+            <strong>We are here:</strong><br />SR.NO.46/9 RAJMUDRA
+            Apartment,FL No.201,<br />Haveli Ambegaon BK, Maharashtra 411046
+          </p>
+        </div>
+        <div class="flex-1 min-w-[300px] contact-form-wrapper">
+          <h2>Get in Touch</h2>
+          <form action="https://formspree.io/f/your-form-id" method="POST" class="flex flex-col gap-4 mt-4">
+            <input name="name" placeholder="Your Name" required="" type="text" />
+            <input name="email" placeholder="Your Email" required="" type="email" />
+            <textarea name="message" placeholder="Your Message" required="" rows="5"></textarea>
+
+            <label for="budget">Budget</label>
+            <select id="budget" name="budget" required="">
+              <option value="0 to 5000">0 to 5,000</option>
+              <option value="5000 to 10,000">5,000 to 10,000</option>
+              <option value="10,000 to 50,000">10,000 to 50,000</option>
+              <option value="50,000 to 1,00,000">50,000 to 1,00,000</option>
+              <option value="1,00,000 to 2,50,000">
+                1,00,000 to 2,50,000
+              </option>
+            </select>
+
+            <label for="time">Time Estimate</label>
+            <select id="time" name="time" required="">
+              <option value="5 Days">5 Days</option>
+              <option value="10 Days">10 Days</option>
+              <option value="15 Days">15 Days</option>
+              <option value="30 Days">30 Days</option>
+            </select>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#161b22] text-gray-400 py-6 text-center text-sm">
+    <p>© 2025 Rajyodha Media & Publicity. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenuPanel = document.getElementById("mobile-menu-panel");
+      const closeMenu = document.getElementById("close-menu");
+      const navItems = document.querySelectorAll(".mobile-nav-item");
+
+      const closePanel = () =>
+        mobileMenuPanel.classList.add("-translate-x-full");
+      const openPanel = () =>
+        mobileMenuPanel.classList.remove("-translate-x-full");
+
+      menuToggle.addEventListener("click", openPanel);
+      closeMenu.addEventListener("click", closePanel);
+      navItems.forEach((item) => item.addEventListener("click", closePanel));
+    });
+  </script>
+</body>
+
+</html>
