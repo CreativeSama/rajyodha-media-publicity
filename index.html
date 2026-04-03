@@ -5,221 +5,309 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Rajoddha Media & Publicity</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
-      /* --- General Setup --- */
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+  <style>
+    /* --- General Setup --- */
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #0d1117;
-        /* Changed to dark background for consistency */
-        color: #c9d1d9;
-        /* Changed default text to light */
-        scroll-behavior: smooth;
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #0d1117;
+      /* Changed to dark background for consistency */
+      color: #c9d1d9;
+      /* Changed default text to light */
+      scroll-behavior: smooth;
+    }
+
+    /* --- Reusable Utility Classes --- */
+    .text-accent {
+      color: #d1b11f;
+    }
+
+    .bg-accent {
+      background-color: #d1b11f;
+    }
+
+    .section-padding {
+      padding: 80px 24px;
+    }
+
+    .section-title {
+      font-family: "Arial Black", Gadget, sans-serif;
+      font-weight: bold;
+      font-size: 2.5em;
+      color: #ffffff;
+      /* Changed to white for dark theme */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 3px solid #00aeef;
+      display: inline-block;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* --- Section Specific Styles --- */
+
+    /* Hero Section */
+    #hero {
+      background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop");
+    }
+
+    /* Services Section */
+    #services {
+      background-color: #161b22;
+    }
+
+    #services .section-title,
+    #services .container>p {
+      color: white;
+    }
+
+    .service-card {
+      flex: 1 1 250px;
+      background-color: #f3f4f6;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .service-card .icon {
+      font-size: 2em;
+    }
+
+    .service-card .title {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    #whatsappBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background: #25D366;
+      padding: 12px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: 0.3s;
+    }
+
+    #whatsappBtn img {
+      width: 35px;
+      height: 35px;
+    }
+
+    #whatsappBtn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+    }
+
+    /* Clientele Section */
+    #clientele {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #161b22;
+    }
+
+    #clientele .section-title,
+    #clientele h2.subtitle {
+      color: white;
+    }
+
+    .client-logo {
+      background: #fff;
+      padding: 20px;
+      display: inline-block;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .client-logo img {
+      max-height: 80px;
+      max-width: 180px;
+      display: block;
+    }
+
+    /* Portfolio Section */
+    #portfolio {
+      background-color: #161b22;
+    }
+
+    #portfolio .section-title,
+    #portfolio p {
+      color: white;
+    }
+
+    .portfolio-grid {
+      background-color: #161b22;
+    }
+
+    .portfolio-card {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 24px;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* About Section */
+    #about {
+      background-color: #161b22;
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 40px;
+      background-color: #161b22;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-details p {
+      margin-bottom: 1em;
+    }
+
+    .contact-form-wrapper {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+      color: #fff;
+      padding: 2em;
+    }
+
+    .contact-form-wrapper h2 {
+      text-align: center;
+      color: #fff;
+    }
+
+    .contact-form-wrapper input,
+    .contact-form-wrapper textarea,
+    .contact-form-wrapper select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      background: #0d1117;
+      color: #c9d1d9;
+      border: 1px solid #30363d;
+      width: 100%;
+    }
+
+    .contact-form-wrapper label {
+      font-weight: bold;
+      color: #fff;
+      margin-top: 10px;
+      display: block;
+    }
+
+    .contact-form-wrapper button {
+      padding: 12px;
+      font-size: 16px;
+      background: #d1b11f;
+      color: #161b22;
+      font-weight: bold;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 2px 8px rgba(30, 60, 120, 0.08);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .contact-form-wrapper button:hover {
+      background: #b89b1a;
+
+    }
+
+    /* 🔥 Premium Service Cards */
+    .service-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
+
+    /* Glow Border */
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(135deg, #d1b11f, #00aeef);
+      -webkit-mask: linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    /* Hover effect */
+    .service-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 25px rgba(209, 177, 31, 0.3);
+    }
+
+    /* Animation zoom */
+    .service-card dotlottie-wc {
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover dotlottie-wc {
+      transform: scale(1.2);
+    }
+
+    /* Text */
+    .service-card h3 {
+      color: #ffffff;
+      margin-top: 10px;
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
       }
 
-      /* --- Reusable Utility Classes --- */
-      .text-accent {
-        color: #d1b11f;
+      50% {
+        transform: scale(1.1);
       }
 
-      .bg-accent {
-        background-color: #d1b11f;
+      100% {
+        transform: scale(1);
       }
+    }
 
-      .section-padding {
-        padding: 80px 24px;
-      }
-
-      .section-title {
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-weight: bold;
-        font-size: 2.5em;
-        color: #ffffff;
-        /* Changed to white for dark theme */
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border-bottom: 3px solid #00aeef;
-        display: inline-block;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-      }
-
-      /* --- Section Specific Styles --- */
-
-      /* Hero Section */
-      #hero {
-        background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop");
-      }
-
-      /* Services Section */
-      #services {
-        background-color: #161b22;
-      }
-
-      #services .section-title,
-      #services .container>p {
-        color: white;
-      }
-
-      .service-card {
-        flex: 1 1 250px;
-        background-color: #f3f4f6;
-        color: black;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
-
-      .service-card .icon {
-        font-size: 2em;
-      }
-
-      .service-card .title {
-        font-weight: bold;
-        font-size: 1.2em;
-      }
-
-      /* Clientele Section */
-      #clientele {
-        padding: 40px 20px;
-        text-align: center;
-        background-color: #161b22;
-      }
-
-      #clientele .section-title,
-      #clientele h2.subtitle {
-        color: white;
-      }
-
-      .client-logo {
-        background: #fff;
-        padding: 20px;
-        display: inline-block;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      }
-
-      .client-logo img {
-        max-height: 80px;
-        max-width: 180px;
-        display: block;
-      }
-
-      /* Portfolio Section */
-      #portfolio {
-        background-color: #161b22;
-      }
-
-      #portfolio .section-title,
-      #portfolio p {
-        color: white;
-      }
-
-      .portfolio-grid {
-        background-color: #161b22;
-      }
-
-      .portfolio-card {
-        background-color: #161b22;
-        border: 1px solid #30363d;
-        border-radius: 12px;
-        padding: 24px;
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
-      }
-
-      .portfolio-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      }
-
-      /* About Section */
-      #about {
-        background-color: #161b22;
-      }
-
-      /* Contact Section */
-      #contact {
-        padding: 40px;
-        background-color: #161b22;
-        color: white;
-        font-family: Arial, sans-serif;
-      }
-
-      .contact-details p {
-        margin-bottom: 1em;
-      }
-
-      .contact-form-wrapper {
-        background-color: #161b22;
-        border: 1px solid #30363d;
-        border-radius: 18px;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-        color: #fff;
-        padding: 2em;
-      }
-
-      .contact-form-wrapper h2 {
-        text-align: center;
-        color: #fff;
-      }
-
-      .contact-form-wrapper input,
-      .contact-form-wrapper textarea,
-      .contact-form-wrapper select {
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 5px;
-        background: #0d1117;
-        color: #c9d1d9;
-        border: 1px solid #30363d;
-        width: 100%;
-      }
-
-      .contact-form-wrapper label {
-        font-weight: bold;
-        color: #fff;
-        margin-top: 10px;
-        display: block;
-      }
-
-      .contact-form-wrapper button {
-        padding: 12px;
-        font-size: 16px;
-        background: #d1b11f;
-        color: #161b22;
-        font-weight: bold;
-        border-radius: 8px;
-        border: none;
-        box-shadow: 0 2px 8px rgba(30, 60, 120, 0.08);
-        cursor: pointer;
-        transition: background 0.2s;
-      }
-
-      .contact-form-wrapper button:hover {
-        background: #b89b1a;
-      }
-    </style>
+    .fixed button {
+      animation: pulse 2s infinite;
+    }
+  </style>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.8/dist/dotlottie-wc.js" type="module"></script>
 </head>
 
 <body class="overflow-x-hidden">
   <nav class="sticky top-0 z-50 bg-[#161b22] bg-opacity-90 backdrop-filter backdrop-blur-lg border-b border-[#30363d]">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <a href="#hero" class="flex items-center gap-2 text-xl font-bold text-white tracking-wide">
-  <img src="https://i.ibb.co/kVQtMKGY/rn-logo.jpg" 
-       alt="RN Logo" 
-       class="w-8 h-8 object-contain" />
+        <img src="https://i.ibb.co/kVQtMKGY/rn-logo.jpg" alt="RN Logo" class="w-8 h-8 object-contain" />
 
-  <div class="leading-tight">
-    <span>Rajoddha</span>
-    <span class="text-accent whitespace-nowrap"> Media & Publicity</span>
-  </div>
-</a>
+        <div class="leading-tight">
+          <span>Rajoddha</span>
+          <span class="text-accent whitespace-nowrap"> Media & Publicity</span>
+        </div>
+      </a>
       <div class="md:hidden">
         <button class="text-white focus:outline-none" id="menu-toggle">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -279,98 +367,80 @@
       </div>
     </section>
 
+
     <section class="section-padding" id="services">
       <div class="container mx-auto text-center">
+
         <h2 class="text-3xl sm:text-4xl font-bold mb-4 section-title">
           Our Services
         </h2>
-        <p class="text-lg mb-12 max-w-3xl mx-auto">
-          We offer a comprehensive suite of services to ensure your brand gets
-          the right kind of attention.
+
+        <p class="text-lg mb-12 max-w-3xl mx-auto text-gray-400">
+          We craft powerful digital experiences that elevate your brand presence.
         </p>
-        <div class="max-w-7xl mx-auto">
-          <div class="flex flex-wrap gap-5 justify-center">
-            <div class="service-card">
-              <div class="icon">🎙️</div>
-              <h3>Podcast</h3>
-            </div>
-            <div class="service-card">
-              <div class="icon">🎨</div>
-              <h3>Graphics</h3>
-            </div>
-            <div class="service-card">
-              <div class="icon">🎥</div>
-              <h3>Video Production</h3>
-            </div>
-            <div class="service-card">
-              <div class="icon">📸</div>
-              <h3>Photography</h3>
-            </div>
-            <div class="service-card">
-              <div class="icon">📱</div>
-              <h3>Social Media Marketing</h3>
-            </div>
-            <div class="service-card">
-              <div class="icon">🏛️</div>
-              <h3>Political Graphics and Marketing</h3>
-            </div>
-            <div class="service-card">
-              <div class="icon">🎧</div>
-              <h3>Podcast Studio</h3>
-            </div>
-            <div class="service-card">
-              <div class="icon">🚁</div>
-              <h3>Drone Shoot</h3>
-            </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
+
+          <!-- Podcast -->
+          <div class="service-card">
+            <dotlottie-wc src="https://lottie.host/85c64e4d-a4bb-4e97-920a-6a19243ef077/zxExRpkq77.lottie"
+              class="w-24 h-24 mx-auto" autoplay loop></dotlottie-wc>
+            <h3>Podcast</h3>
           </div>
+
+          <!-- Graphics -->
+          <div class="service-card">
+            <dotlottie-wc src="https://lottie.host/365dbe58-ee48-4c91-8b3c-f5b28dc26105/2uu283CNla.lottie"
+              class="w-24 h-24 mx-auto" autoplay loop></dotlottie-wc>
+            <h3>Graphics</h3>
+          </div>
+
+          <!-- Video -->
+          <div class="service-card">
+            <dotlottie-wc src="https://lottie.host/11a8c478-579e-4cca-b6a1-d95497656737/RHHjRp6Bc2.lottie"
+              class="w-24 h-24 mx-auto" autoplay loop></dotlottie-wc>
+            <h3>Video Production</h3>
+          </div>
+
+          <!-- Photography -->
+          <div class="service-card">
+            <dotlottie-wc src="https://lottie.host/95e14d08-9d63-459e-a503-3fc4da9083cf/3ZUZR3kDNi.lottie"
+              class="w-24 h-24 mx-auto" autoplay loop></dotlottie-wc>
+            <h3>Photography</h3>
+          </div>
+
+          <!-- Social Media -->
+          <div class="service-card">
+            <dotlottie-wc src="https://lottie.host/a75a093f-8991-4e04-a0cb-52095d1a21b8/UmqHfP3azN.lottie"
+              class="w-24 h-24 mx-auto" autoplay loop></dotlottie-wc>
+            <h3>Social Media Marketing</h3>
+          </div>
+
+          <!-- Political -->
+          <div class="service-card">
+            <dotlottie-wc src="https://lottie.host/758cd612-97b5-4940-ab5d-b891c93cf12f/Od5TvBGv8k.lottie"
+              class="w-24 h-24 mx-auto" autoplay loop></dotlottie-wc>
+            <h3 class="text-sm">Political Graphics and Marketing </h3>
+          </div>
+
+          <!-- Studio -->
+          <div class="service-card">
+            <dotlottie-wc src="https://lottie.host/fde707b8-66b8-4028-b896-70e72cf8af5a/2FAMEQonGF.lottie"
+              class="w-24 h-24 mx-auto" autoplay loop></dotlottie-wc>
+            <h3>Podcast Studio</h3>
+          </div>
+
+          <!-- Drone -->
+          <div class="service-card">
+            <dotlottie-wc src="https://lottie.host/f60d1c30-1c48-4432-9237-6ecb99674f80/SGyM498jLX.lottie"
+              class="w-24 h-24 mx-auto" autoplay loop></dotlottie-wc>
+            <h3>Drone Shoot</h3>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section-padding" id="portfolio">
-      <div class="container mx-auto text-center">
-        <h2 class="section-title">Our Success Stories</h2>
-        <p class="text-lg mb-12 max-w-3xl mx-auto">
-          A glimpse into our past work and the clients we've helped achieve
-          their publicity goals.
-        </p>
-      </div>
-      <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 portfolio-grid">
-        <div class="portfolio-card">
-          <img alt="Project 1" class="rounded-md mb-4 w-full h-auto"
-            src="https://placehold.co/400x250/30363d/c9d1d9?text=Project+1" />
-          <h3 class="text-xl font-semibold text-white mb-2">
-            Brand Launch Campaign
-          </h3>
-          <p class="text-gray-400 text-sm">
-            Successfully launched a new tech startup, securing coverage in
-            major industry publications.
-          </p>
-        </div>
-        <div class="portfolio-card">
-          <img alt="Project 2" class="rounded-md mb-4 w-full h-auto"
-            src="https://placehold.co/400x250/30363d/c9d1d9?text=Project+2" />
-          <h3 class="text-xl font-semibold text-white mb-2">
-            Executive Profile Placement
-          </h3>
-          <p class="text-gray-400 text-sm">
-            Secured a feature interview for a CEO, positioning them as a
-            thought leader in their field.
-          </p>
-        </div>
-        <div class="portfolio-card">
-          <img alt="Project 3" class="rounded-md mb-4 w-full h-auto"
-            src="https://placehold.co/400x250/30363d/c9d1d9?text=Project+3" />
-          <h3 class="text-xl font-semibold text-white mb-2">
-            Event Publicity
-          </h3>
-          <p class="text-gray-400 text-sm">
-            Generated widespread media buzz and attendance for a national
-            conference.
-          </p>
-        </div>
-      </div>
-    </section>
     <section id="testimonials" class="section-padding bg-[#161b22]">
       <div class="container mx-auto text-center">
 
@@ -554,7 +624,10 @@
               <option value="30 Days">30 Days</option>
             </select>
 
-            <button type="submit">Send Message</button>
+            <button type="button" onclick="sendToWhatsApp()"
+              class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg w-full">
+              Send Message on WhatsApp
+            </button>
           </form>
         </div>
       </div>
@@ -582,6 +655,44 @@
       navItems.forEach((item) => item.addEventListener("click", closePanel));
     });
   </script>
+  <script>
+    function sendToWhatsApp() {
+      let name = document.querySelector('input[name="name"]')?.value || "";
+      let email = document.querySelector('input[name="email"]')?.value || "";
+      let message = document.querySelector('textarea[name="message"]')?.value || "";
+      let budget = document.querySelector('select[name="budget"]')?.value || "";
+      let time = document.querySelector('select[name="time"]')?.value || "";
+
+      let phone = "917263852727";
+
+      let text = "";
+
+      // If form filled
+      if (name || message) {
+        text = `Hello Rajoddha Media & Publicity,
+
+I want to enquire about your services.
+
+Name: ${name}
+Email: ${email}
+Message: ${message}
+Budget: ${budget}
+Time: ${time}`;
+      } else {
+        text = `Hello Rajoddha Media & Publicity,
+I want to enquire about your services.`;
+      }
+
+      let url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+  <!-- Smart Floating WhatsApp Button -->
+  <a href="https://wa.me/917263852727?text=Hello%20Rajoddha%20Media%20%26%20Publicity%2C%20I%20want%20to%20make%20an%20inquiry." 
+   target="_blank" 
+   id="whatsappBtn">
+  <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp">
+</a>
 </body>
 
 </html>
