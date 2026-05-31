@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <!-- Security: basic CSP — blocks inline eval and restricts resource origins -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ibb.co https://img.icons8.com https://img.youtube.com; connect-src 'self'; frame-src https://www.youtube.com;" />
+  <title>Rajoddha Media & Publicity LLP — Strategic Media & PR</title>
+  <meta name="description"
+    content="Rajoddha Media & Publicity LLP — Your strategic partner for impactful media publicity, podcasts, video production, social media marketing, and more. Based in Pune, Maharashtra." />
+  <meta property="og:title" content="Rajoddha Media & Publicity LLP" />
+  <meta property="og:description"
+    content="Strategic media publicity, podcasts, video production, photography, and social media marketing." />
+  <meta property="og:image" content="https://i.ibb.co/TMg4r6G7/Profile-Logo-01.png" />
+  <meta property="og:url" content="https://rajoddhamedia.com" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --accent: #ffa300;
+      --accent-dark: #cc8200;
+      --blue: #00aeef;
+      --bg: #000000;
+      --surface: #0d0d0d;
+      --surface2: #141414;
+      --border: #1e1e1e;
+      --border2: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888888;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── Typography ── */
+    .display {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3rem);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      display: inline-block;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-link {
+      color: #aaa;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #fff;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-image: url('https://i.ibb.co/Q0d8NZx/Banner-image-01-jpg.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.5) 100%);
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.5rem, 8vw, 5.5rem);
+      text-transform: uppercase;
+      line-height: 1.05;
+      letter-spacing: 1px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      transition: background 0.2s, transform 0.2s;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-cta:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ── Service Cards ── */
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 16px;
+      padding: 20px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      position: relative;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    .service-card.linkable { cursor: pointer; }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(135deg, var(--accent), var(--blue));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(255, 163, 0, 0.15);
+      border-color: transparent;
+    }
+
+    .service-card:hover::before { opacity: 1; }
+
+    .service-img {
+      width: 100%;
+      height: 140px;
+      object-fit: contain;
+      transition: transform 0.35s ease;
+    }
+
+    .service-card:hover .service-img { transform: scale(1.05); }
+
+    .service-card h3 {
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* ── Clientele Marquee ── */
+    .mq-wrapper {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    .mq-wrapper::before,
+    .mq-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .mq-wrapper::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+    .mq-wrapper::after  { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+
+    .mq-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      /* FIX: animation defined via inline will-change; direction toggled via JS class */
+      animation: mq-scroll-left 60s linear infinite;
+    }
+
+    .mq-track.paused { animation-play-state: paused; }
+    .mq-track:hover  { animation-play-state: paused; }
+
+    .mq-track.dir-right { animation-name: mq-scroll-right; }
+
+    @keyframes mq-scroll-left {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    @keyframes mq-scroll-right {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0); }
+    }
+
+    .mq-logo-card {
+      background: #fff;
+      border-radius: 18px;
+      width: 200px;
+      height: 110px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mq-logo-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .mq-logo-card img {
+      width: auto !important;
+      height: auto !important;
+      max-width: 90% !important;
+      max-height: 80% !important;
+      object-fit: contain !important;
+      display: block;
+    }
+
+    .mq-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.15s;
+    }
+
+    .mq-btn:hover { background: var(--border2); }
+
+    /* ── Testimonial Cards ── */
+    .testimonial-card {
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      display: block;
+      text-decoration: none;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(255, 163, 0, 0.18);
+    }
+
+    .testimonial-card .thumb-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-card img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: contain;
+      background: #000;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .testimonial-card:hover img { transform: scale(1.04); }
+
+    .t-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.28);
+      transition: background 0.3s;
+    }
+
+    .testimonial-card:hover .t-play-overlay { background: rgba(0, 0, 0, 0.42); }
+
+    .t-play-btn {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 0, 0, 0.88);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #fff;
+      transition: transform 0.3s;
+    }
+
+    .testimonial-card:hover .t-play-btn { transform: scale(1.12); }
+
+    /* FIX: t-card-body was referenced in JS but had no CSS */
+    .t-card-body {
+      padding: 12px 14px 16px;
+    }
+
+    .t-card-body h3 {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .t-card-body p {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    #prev-btn:hover, #next-btn:hover {
+      background: var(--border2) !important;
+      color: #fff !important;
+    }
+
+    #prev-btn:disabled, #next-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    #testimonial-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      transition: opacity 0.25s ease;
+    }
+
+    #testimonial-grid.fading { opacity: 0; }
+
+    /* ── About ── */
+    #about { background: var(--surface); }
+
+    /* ── Contact ── */
+    #contact { background: var(--bg); }
+
+    .contact-form-wrapper {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      padding: 2rem;
+      color: #fff;
+    }
+
+    .contact-form-wrapper input,
+    .contact-form-wrapper textarea,
+    .contact-form-wrapper select {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: 15px;
+      border-radius: 8px;
+      background: var(--surface2);
+      color: var(--text);
+      border: 1px solid var(--border2);
+      outline: none;
+      transition: border-color 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .contact-form-wrapper input:focus,
+    .contact-form-wrapper textarea:focus,
+    .contact-form-wrapper select:focus {
+      border-color: var(--accent);
+    }
+
+    .contact-form-wrapper select option { background: var(--surface2); }
+
+    .contact-form-wrapper label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .wa-btn {
+      width: 100%;
+      padding: 13px;
+      background: #25D366;
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .wa-btn:hover {
+      background: #1fad55;
+      transform: translateY(-1px);
+    }
+
+    /* ── WhatsApp Float ── */
+    #whatsappBtn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      background: #25D366;
+      padding: 13px;
+      border-radius: 50%;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    #whatsappBtn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.6);
+    }
+
+    #whatsappBtn img { width: 32px; height: 32px; display: block; }
+
+    /* ── Mobile Menu ── */
+    #mobile-menu-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.97);
+      z-index: 200;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+    }
+
+    #mobile-menu-panel.open { transform: translateX(0); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav>
+    <div class="container mx-auto px-5 py-4 flex justify-between items-center">
+      <a href="#hero" class="flex items-center gap-3 text-white no-underline">
+        <img src="https://i.ibb.co/TMg4r6G7/Profile-Logo-01.png" alt="Rajoddha Logo" class="w-8 h-8 object-contain" loading="lazy" />
+        <div class="leading-tight">
+          <span class="font-semibold text-base">Rajoddha</span>
+          <span class="font-semibold text-base" style="color: var(--accent);"> Media & Publicity LLP</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-7" id="nav-menu">
+        <a class="nav-link" href="#hero">Home</a>
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="podcast.html">Podcasts</a>
+        <a class="nav-link" href="#testimonials">Client Reviews</a>
+        <a class="nav-link" href="#clientele">Clientele</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="md:hidden text-white p-1 focus:outline-none" id="menu-toggle" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div id="mobile-menu-panel">
+    <div class="flex justify-end p-5">
+      <button class="text-white focus:outline-none" id="close-menu" aria-label="Close menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-col items-center justify-center gap-10 pt-8 pb-12 text-xl font-semibold">
+      <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="#hero">Home</a>
+      <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="#services">Services</a>
+      <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="podcast.html">Podcasts</a>
+      <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="#testimonials">Client Reviews</a>
+      <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="#clientele">Clientele</a>
+      <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="#about">About</a>
+      <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section id="hero">
+      <div class="hero-content container mx-auto px-6 text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest mb-4" style="color: var(--accent);">Media · Publicity · Impact</p>
+        <h1 class="hero-title text-white mb-6">
+          Elevate Your Presence<br />
+          with <span style="color: var(--accent);">Publicity</span> That Matters
+        </h1>
+        <p class="text-gray-300 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+          Rajoddha Media is your strategic partner for impactful media publicity. We craft compelling narratives that
+          resonate with your audience and drive tangible results.
+        </p>
+        <a class="hero-cta" href="#services">
+          Explore Our Services
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ── SERVICES ── -->
+    <section class="py-24 px-6" id="services">
+      <div class="container mx-auto">
+        <div class="text-center mb-16 reveal">
+          <h2 class="section-title">Our Services</h2>
+          <p class="text-gray-400 mt-6 max-w-xl mx-auto">We craft powerful digital experiences that elevate your brand
+            presence across every channel.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto reveal">
+
+          <a href="podcast.html" class="service-card linkable">
+            <img src="https://i.ibb.co/7JXHRxr2/Our-services-01.png" alt="Podcast" class="service-img" loading="lazy" />
+            <h3>Podcast</h3>
+          </a>
+
+          <div class="service-card">
+            <img src="https://i.ibb.co/JwC1Lszt/Our-services-02.png" alt="Graphics" class="service-img" loading="lazy" />
+            <h3>Graphics</h3>
+          </div>
+
+          <div class="service-card">
+            <img src="https://i.ibb.co/Ng51h0F9/Our-services-03.png" alt="Video Production" class="service-img" loading="lazy" />
+            <h3>Video Production</h3>
+          </div>
+
+          <div class="service-card">
+            <img src="https://i.ibb.co/Pv8DykgD/Our-services-04.png" alt="Photography" class="service-img" loading="lazy" />
+            <h3>Photography</h3>
+          </div>
+
+          <div class="service-card">
+            <img src="https://i.ibb.co/Z1MZGYwy/Our-services-05.png" alt="Social Media Marketing" class="service-img" loading="lazy" />
+            <h3>Social Media Marketing</h3>
+          </div>
+
+          <div class="service-card">
+            <img src="https://i.ibb.co/MkP7yYvm/Our-services-06.png" alt="Political Graphics & Marketing" class="service-img" loading="lazy" />
+            <h3 style="font-size: 0.85rem;">Political Graphics & Marketing</h3>
+          </div>
+
+          <div class="service-card">
+            <img src="https://i.ibb.co/ymWry1Kg/Our-services-07.png" alt="Podcast Studio" class="service-img" loading="lazy" />
+            <h3>Podcast Studio</h3>
+          </div>
+
+          <div class="service-card">
+            <img src="https://i.ibb.co/qF4PkxSb/Our-services-08.png" alt="Drone Shoot" class="service-img" loading="lazy" />
+            <h3>Drone Shoot</h3>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CLIENT REVIEWS ── -->
+    <section id="testimonials" class="py-24 overflow-hidden" style="background: var(--surface);">
+      <div class="container mx-auto px-6">
+
+        <div class="text-center mb-12 reveal">
+          <h2 class="section-title">What Our Clients Say</h2>
+          <p class="text-gray-400 mt-6 max-w-xl mx-auto">Hear directly from the brands and businesses we've worked with.</p>
+        </div>
+
+        <!-- Video Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 mb-8" id="testimonial-grid"></div>
+
+        <!-- Navigation -->
+        <div class="flex items-center justify-center gap-6 mt-4">
+          <button id="prev-btn"
+            class="flex items-center gap-2 px-5 py-2 rounded-full border text-sm font-semibold transition"
+            style="border-color: var(--border2); color: #aaa; background: var(--surface2);" onclick="changePage(-1)">
+            ← Prev
+          </button>
+
+          <span id="page-indicator" class="text-sm" style="color: var(--muted);"></span>
+
+          <button id="next-btn"
+            class="flex items-center gap-2 px-5 py-2 rounded-full border text-sm font-semibold transition"
+            style="border-color: var(--border2); color: #aaa; background: var(--surface2);" onclick="changePage(1)">
+            Next →
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CLIENTELE ── -->
+    <section id="clientele" class="py-24 px-6">
+      <div class="container mx-auto text-center mb-10 reveal">
+        <h2 class="section-title">Our Clientele</h2>
+        <p class="text-gray-400 mt-6">Trusted by leading brands across Maharashtra</p>
+      </div>
+
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <button class="mq-btn" id="btn-left" title="Scroll Left">&#8592;</button>
+        <button class="mq-btn" id="btn-right" title="Scroll Right">&#8594;</button>
+      </div>
+
+      <div class="mq-wrapper">
+        <div class="mq-track" id="mq-track">
+          <!-- Set 1 -->
+          <div class="mq-logo-card"><img src="https://i.ibb.co/XrLmJ6GV/Alsu.png" alt="Alsu" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/9m66zQTm/arthkatta.png" alt="arthkatta" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/4n4m7bGp/D-P-Holidays.png" alt="D P Holidays" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/q3WXH4zH/arthkranti.png" alt="arthkranti" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/n8mjZ64x/Doctor-Boltoy.png" alt="Doctor Boltoy" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/GQ9L0tF7/Galaxy-dental.png" alt="Galaxy dental" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/5gFc1KgH/jaydev.png" alt="jaydev" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/d4DDqF7Y/Manhor-Group.png" alt="Manhor Group" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/SDLxZkwP/Man-Shanti.png" alt="Man Shanti" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/DP42j3cL/phoneix.png" alt="phoneix" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/BKdS4Xgv/Rajoddha-Talks.png" alt="Rajoddha Talks" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/ycCbVyR9/Rankar-academy.png" alt="Rankar academy" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/YFgfggS7/Sahyadri.png" alt="Sahyadri" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/C5y3CNHk/Silver-Leaf.png" alt="Silver Leaf" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/LXHMVsGL/Topper-academy.png" alt="Topper academy" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/sdvx2HW2/Smile-Meditation.png" alt="Smile Meditation" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/b5FQ0wqP/vaayu.png" alt="vaayu" loading="lazy" /></div>
+          <!-- Set 2 — exact duplicate for seamless loop -->
+          <div class="mq-logo-card"><img src="https://i.ibb.co/XrLmJ6GV/Alsu.png" alt="Alsu" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/9m66zQTm/arthkatta.png" alt="arthkatta" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/4n4m7bGp/D-P-Holidays.png" alt="D P Holidays" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/q3WXH4zH/arthkranti.png" alt="arthkranti" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/n8mjZ64x/Doctor-Boltoy.png" alt="Doctor Boltoy" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/GQ9L0tF7/Galaxy-dental.png" alt="Galaxy dental" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/5gFc1KgH/jaydev.png" alt="jaydev" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/d4DDqF7Y/Manhor-Group.png" alt="Manhor Group" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/SDLxZkwP/Man-Shanti.png" alt="Man Shanti" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/DP42j3cL/phoneix.png" alt="phoneix" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/BKdS4Xgv/Rajoddha-Talks.png" alt="Rajoddha Talks" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/ycCbVyR9/Rankar-academy.png" alt="Rankar academy" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/YFgfggS7/Sahyadri.png" alt="Sahyadri" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/C5y3CNHk/Silver-Leaf.png" alt="Silver Leaf" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/LXHMVsGL/Topper-academy.png" alt="Topper academy" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/sdvx2HW2/Smile-Meditation.png" alt="Smile Meditation" loading="lazy" /></div>
+          <div class="mq-logo-card"><img src="https://i.ibb.co/b5FQ0wqP/vaayu.png" alt="vaayu" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section class="py-24 px-6" id="about">
+      <div class="container mx-auto flex flex-col md:flex-row items-center gap-14 reveal">
+        <div class="md:w-1/2">
+          <img alt="Rajoddha Media Team" class="rounded-2xl w-full h-auto object-cover"
+            src="https://i.ibb.co/Q0d8NZx/Banner-image-01-jpg.jpg" loading="lazy"
+            style="max-height: 420px; object-position: center;" />
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="section-title mb-6">About Rajoddha Media</h2>
+          <p class="text-gray-400 text-base leading-relaxed mb-4">
+            We are a team of passionate and experienced media professionals dedicated to helping our clients tell their
+            stories effectively. Our approach is rooted in understanding your unique goals and developing customised
+            strategies to achieve them.
+          </p>
+          <p class="text-gray-400 text-base leading-relaxed mb-8">
+            Our commitment to integrity, creativity, and results has made us a trusted partner for businesses and
+            individuals seeking to make a lasting impact in the media landscape.
+          </p>
+          <a href="#contact" class="hero-cta" style="display: inline-flex;">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" class="py-24 px-6">
+      <div class="container mx-auto">
+        <div class="text-center mb-14 reveal">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="text-gray-400 mt-6">Let's work together to elevate your brand.</p>
+        </div>
+
+        <div class="flex flex-wrap gap-10 items-start justify-center reveal">
+
+          <!-- Contact details -->
+          <div class="flex-1 min-w-[260px] max-w-xs text-gray-400 space-y-6">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">Phone</p>
+              <a href="tel:+917263852727" class="text-white font-medium hover:text-yellow-400 transition">+91 72638 52727</a>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Email</p>
+              <a href="mailto:rajoddhamedia@gmail.com" class="inline-block hover:opacity-75 transition">
+                <img src="https://img.icons8.com/color/48/new-post.png" alt="Email Icon" class="w-8 h-8" loading="lazy" />
+              </a>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Instagram</p>
+              <a href="https://instagram.com/rajoddhamediapublicityllp" target="_blank" rel="noopener noreferrer" class="inline-block hover:opacity-75 transition">
+                <img src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram" class="w-8 h-8" loading="lazy" />
+              </a>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">YouTube</p>
+              <a href="https://www.youtube.com/@rajoddhamediaofficial7350" target="_blank" rel="noopener noreferrer" class="inline-block hover:opacity-75 transition">
+                <img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube" class="w-8 h-8" loading="lazy" />
+              </a>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">Address</p>
+              <p class="text-sm leading-relaxed">SR.NO.46/9 RAJMUDRA Apartment, FL No.201,<br />Haveli Ambegaon BK, Maharashtra 411046</p>
+            </div>
+          </div>
+
+          <!-- Contact form -->
+          <div class="flex-1 min-w-[300px] max-w-lg contact-form-wrapper">
+            <h2 class="text-xl font-semibold text-center mb-6">Send Us a Message</h2>
+            <div class="flex flex-col gap-4">
+              <div>
+                <label for="f-name">Your Name</label>
+                <input id="f-name" name="name" placeholder="Amit Sharma" type="text" />
+              </div>
+              <div>
+                <label for="f-email">Email Address</label>
+                <input id="f-email" name="email" placeholder="you@example.com" type="email" />
+              </div>
+              <div>
+                <label for="f-message">Message</label>
+                <textarea id="f-message" name="message" placeholder="Tell us about your project…" rows="4"></textarea>
+              </div>
+              <div>
+                <label for="f-budget">Budget (₹)</label>
+                <select id="f-budget" name="budget">
+                  <option value="">Select a range</option>
+                  <option value="0 to 5,000">0 – 5,000</option>
+                  <option value="5,000 to 10,000">5,000 – 10,000</option>
+                  <option value="10,000 to 50,000">10,000 – 50,000</option>
+                  <option value="50,000 to 1,00,000">50,000 – 1,00,000</option>
+                  <option value="1,00,000 to 2,50,000">1,00,000 – 2,50,000</option>
+                </select>
+              </div>
+              <div>
+                <label for="f-time">Timeline</label>
+                <select id="f-time" name="time">
+                  <option value="">Select timeline</option>
+                  <option value="5 Days">5 Days</option>
+                  <option value="10 Days">10 Days</option>
+                  <option value="15 Days">15 Days</option>
+                  <option value="30 Days">30 Days</option>
+                </select>
+              </div>
+              <button class="wa-btn" onclick="sendToWhatsApp()">
+                <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="" class="w-5 h-5" loading="lazy" />
+                Send on WhatsApp
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="py-8 text-center text-sm text-gray-500">
+    <p>© <span id="footer-year"></span> Rajoddha Media & Publicity LLP. All rights reserved.</p>
+  </footer>
+
+  <!-- ── FLOATING WHATSAPP ── -->
+  <a href="https://wa.me/917263852727" target="_blank" rel="noopener noreferrer" id="whatsappBtn" aria-label="Chat on WhatsApp">
+    <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp" loading="lazy" />
+  </a>
+
+  <script>
+    // Auto copyright year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobilePanel = document.getElementById('mobile-menu-panel');
+    const closeMenu = document.getElementById('close-menu');
+    const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+
+    menuToggle.addEventListener('click', () => mobilePanel.classList.add('open'));
+    closeMenu.addEventListener('click', () => mobilePanel.classList.remove('open'));
+    mobileNavItems.forEach(item => item.addEventListener('click', () => mobilePanel.classList.remove('open')));
+
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(sec => observer.observe(sec));
+
+    // ── Clientele marquee direction buttons ──
+    // FIX: Use getComputedStyle + set animation-name directly so restart works correctly
+    const track = document.getElementById('mq-track');
+
+    function restartMarquee(dir) {
+      track.style.animationName = 'none';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (dir === 'right') {
+            track.classList.add('dir-right');
+          } else {
+            track.classList.remove('dir-right');
+          }
+          track.style.animationName = '';
+        });
+      });
+    }
+
+    document.getElementById('btn-left').addEventListener('click', () => restartMarquee('left'));
+    document.getElementById('btn-right').addEventListener('click', () => restartMarquee('right'));
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // ── Security: HTML escape utility (prevents XSS in dynamic content) ──
+    function escapeHTML(str) {
+      const d = document.createElement('div');
+      d.appendChild(document.createTextNode(String(str)));
+      return d.innerHTML;
+    }
+
+    // ── Client Reviews pagination ──
+    const testimonials = [
+      { id: '0lFO0uIjdFA', title: 'Client Review — Galaxy Dental',   subtitle: 'Experience with Rajoddha Media' },
+      { id: 'Rps1l7vVnrQ', title: 'Client Review — Mann Shanti',     subtitle: 'Experience with Rajoddha Media' },
+      { id: 'GuczPpMOMPw', title: 'Client Review — Arth Kranti',     subtitle: 'Experience with Rajoddha Media' },
+      { id: 'biaVezrXEro', title: 'Client Review — Rankar Academy',  subtitle: 'Experience with Rajoddha Media' },
+      { id: 'vl8oCm4VbiU', title: 'Client Review — Sahyadri',        subtitle: 'Experience with Rajoddha Media' },
+    ];
+
+    const PER_PAGE = 5;
+    let currentPage = 0;
+    const totalPages = Math.ceil(testimonials.length / PER_PAGE);
+
+    const grid      = document.getElementById('testimonial-grid');
+    const prevBtn   = document.getElementById('prev-btn');
+    const nextBtn   = document.getElementById('next-btn');
+    const indicator = document.getElementById('page-indicator');
+
+    // Security: build cards via DOM API — no innerHTML string interpolation,
+    // so even if data ever changes, no XSS is possible.
+    function makeCard(v) {
+      const safeId    = encodeURIComponent(v.id);
+      const safeTitle = escapeHTML(v.title);
+
+      const a = document.createElement('a');
+      a.href = `https://youtu.be/${safeId}`;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';   // Fix: reverse tabnapping
+      a.className = 'testimonial-card';
+
+      const thumbWrap = document.createElement('div');
+      thumbWrap.className = 'thumb-wrap';
+
+      const img = document.createElement('img');
+      img.src = `https://img.youtube.com/vi/${safeId}/maxresdefault.jpg`;
+      img.alt = safeTitle;
+      img.loading = 'lazy';
+      img.addEventListener('error', function() {
+        this.src = `https://img.youtube.com/vi/${safeId}/hqdefault.jpg`;
+        this.onerror = null; // prevent infinite loop if fallback also fails
+      });
+
+      const overlay = document.createElement('div');
+      overlay.className = 't-play-overlay';
+      const btn = document.createElement('div');
+      btn.className = 't-play-btn';
+      btn.textContent = '▶';
+      overlay.appendChild(btn);
+
+      thumbWrap.appendChild(img);
+      thumbWrap.appendChild(overlay);
+
+      const body = document.createElement('div');
+      body.className = 't-card-body';
+      const h3 = document.createElement('h3');
+      h3.textContent = v.title;   // textContent — no HTML injection possible
+      const p = document.createElement('p');
+      p.textContent = v.subtitle;
+      body.appendChild(h3);
+      body.appendChild(p);
+
+      a.appendChild(thumbWrap);
+      a.appendChild(body);
+      return a;
+    }
+
+    function renderPage(page) {
+      grid.classList.add('fading');
+      setTimeout(() => {
+        grid.innerHTML = '';
+        const start = page * PER_PAGE;
+        const slice = testimonials.slice(start, start + PER_PAGE);
+
+        slice.forEach(v => grid.appendChild(makeCard(v)));
+
+        // Fill empty slots so grid stays 5-column
+        const remainder = PER_PAGE - slice.length;
+        for (let i = 0; i < remainder; i++) {
+          grid.appendChild(document.createElement('div'));
+        }
+
+        indicator.textContent = `${page + 1} / ${totalPages}`;
+        prevBtn.disabled = page === 0;
+        nextBtn.disabled = page === totalPages - 1;
+        grid.classList.remove('fading');
+      }, 200);
+    }
+
+    function changePage(dir) {
+      const newPage = currentPage + dir;
+      if (newPage < 0 || newPage >= totalPages) return;
+      currentPage = newPage;
+      renderPage(currentPage);
+    }
+
+    renderPage(0);
+
+    // WhatsApp message builder
+    function sendToWhatsApp() {
+      const nameEl    = document.getElementById('f-name');
+      const emailEl   = document.getElementById('f-email');
+      const messageEl = document.getElementById('f-message');
+      const budgetEl  = document.getElementById('f-budget');
+      const timeEl    = document.getElementById('f-time');
+
+      const name    = nameEl.value.trim();
+      const email   = emailEl.value.trim();
+      const message = messageEl.value.trim();
+      const budget  = budgetEl.value;
+      const time    = timeEl.value;
+
+      // Validation
+      if (!name) {
+        alert('Please enter your name.');
+        nameEl.focus();
+        return;
+      }
+      if (name.length > 100) {
+        alert('Name is too long (max 100 characters).');
+        nameEl.focus();
+        return;
+      }
+      if (!message) {
+        alert('Please enter a message.');
+        messageEl.focus();
+        return;
+      }
+      if (message.length > 1000) {
+        alert('Message is too long (max 1000 characters).');
+        messageEl.focus();
+        return;
+      }
+      // Email format check (if provided)
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        emailEl.focus();
+        return;
+      }
+
+      const text = `Hello Rajoddha Media & Publicity,
+
+I'd like to enquire about your services.
+
+Name: ${name}
+Email: ${email || 'Not provided'}
+Message: ${message}
+Budget: ${budget || 'Not specified'}
+Timeline: ${time || 'Not specified'}`;
+
+      window.open(`https://wa.me/917263852727?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+    }
+  </script>
+
+</body>
+</html>
