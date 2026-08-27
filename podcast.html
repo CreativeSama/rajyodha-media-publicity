@@ -9,15 +9,19 @@
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ibb.co https://img.icons8.com https://img.youtube.com; connect-src 'self';" />
   <title>Podcasts — Rajoddha Media & Publicity LLP</title>
-  <meta name="description" content="Watch exclusive Rajoddha Media podcast episodes featuring inspiring conversations, interviews, and impactful stories from across Maharashtra." />
+  <meta name="description"
+    content="Watch exclusive Rajoddha Media podcast episodes featuring inspiring conversations, interviews, and impactful stories from across Maharashtra." />
   <meta property="og:title" content="Podcasts — Rajoddha Media & Publicity LLP" />
-  <meta property="og:description" content="Exclusive podcast episodes, interviews, and conversations from Rajoddha Media." />
+  <meta property="og:description"
+    content="Exclusive podcast episodes, interviews, and conversations from Rajoddha Media." />
   <meta property="og:image" content="https://i.ibb.co/TMg4r6G7/Profile-Logo-01.png" />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -35,8 +39,13 @@
       --muted: #888888;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--bg);
@@ -50,7 +59,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
@@ -77,24 +86,39 @@
       transition: width 0.2s;
     }
 
-    .nav-link:hover { color: #fff; }
-    .nav-link:hover::after { width: 100%; }
-    .nav-link.current { color: var(--accent); }
-    .nav-link.current::after { width: 100%; }
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link.current {
+      color: var(--accent);
+    }
+
+    .nav-link.current::after {
+      width: 100%;
+    }
 
     /* ── Mobile Menu ── */
     #mobile-menu-panel {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.97);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.97);
       z-index: 200;
       transform: translateX(-100%);
       transition: transform 0.3s ease;
       overflow-y: auto;
     }
 
-    #mobile-menu-panel.open { transform: translateX(0); }
+    #mobile-menu-panel.open {
+      transform: translateX(0);
+    }
 
     /* ── Page Header ── */
     .page-header {
@@ -107,18 +131,22 @@
     .page-header::before {
       content: '';
       position: absolute;
-      top: -120px; left: -120px;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(255,163,0,0.07) 0%, transparent 70%);
+      top: -120px;
+      left: -120px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 163, 0, 0.07) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .page-header::after {
       content: '';
       position: absolute;
-      bottom: -100px; right: -80px;
-      width: 350px; height: 350px;
-      background: radial-gradient(circle, rgba(0,174,239,0.06) 0%, transparent 70%);
+      bottom: -100px;
+      right: -80px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(0, 174, 239, 0.06) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -176,9 +204,14 @@
       border-color: transparent;
     }
 
-    .podcast-card:hover::before { opacity: 1; }
+    .podcast-card:hover::before {
+      opacity: 1;
+    }
 
-    .thumb-container { position: relative; overflow: hidden; }
+    .thumb-container {
+      position: relative;
+      overflow: hidden;
+    }
 
     .podcast-card img.thumb {
       width: 100%;
@@ -188,7 +221,9 @@
       transition: transform 0.4s ease;
     }
 
-    .podcast-card:hover img.thumb { transform: scale(1.04); }
+    .podcast-card:hover img.thumb {
+      transform: scale(1.04);
+    }
 
     .play-overlay {
       position: absolute;
@@ -196,11 +231,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(0,0,0,0.28);
+      background: rgba(0, 0, 0, 0.28);
       transition: background 0.3s;
     }
 
-    .podcast-card:hover .play-overlay { background: rgba(0,0,0,0.42); }
+    .podcast-card:hover .play-overlay {
+      background: rgba(0, 0, 0, 0.42);
+    }
 
     .play-btn {
       width: 72px;
@@ -220,7 +257,9 @@
       background: #ff0000;
     }
 
-    .card-body { padding: 20px 22px 24px; }
+    .card-body {
+      padding: 20px 22px 24px;
+    }
 
     .card-body h2 {
       font-family: 'Barlow Condensed', sans-serif;
@@ -270,7 +309,10 @@
       text-decoration: none;
     }
 
-    .back-btn:hover { background: var(--accent-dark); transform: translateY(-2px); }
+    .back-btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
 
     /* ── WhatsApp Float ── */
     #whatsappBtn {
@@ -290,7 +332,11 @@
       box-shadow: 0 10px 28px rgba(37, 211, 102, 0.6);
     }
 
-    #whatsappBtn img { width: 32px; height: 32px; display: block; }
+    #whatsappBtn img {
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
 
     /* ── Footer ── */
     footer {
@@ -312,12 +358,29 @@
     }
 
     /* Stagger delay for grid children */
-    .stagger-grid .reveal:nth-child(1) { transition-delay: 0s; }
-    .stagger-grid .reveal:nth-child(2) { transition-delay: 0.07s; }
-    .stagger-grid .reveal:nth-child(3) { transition-delay: 0.14s; }
-    .stagger-grid .reveal:nth-child(4) { transition-delay: 0.21s; }
-    .stagger-grid .reveal:nth-child(5) { transition-delay: 0.28s; }
-    .stagger-grid .reveal:nth-child(6) { transition-delay: 0.35s; }
+    .stagger-grid .reveal:nth-child(1) {
+      transition-delay: 0s;
+    }
+
+    .stagger-grid .reveal:nth-child(2) {
+      transition-delay: 0.07s;
+    }
+
+    .stagger-grid .reveal:nth-child(3) {
+      transition-delay: 0.14s;
+    }
+
+    .stagger-grid .reveal:nth-child(4) {
+      transition-delay: 0.21s;
+    }
+
+    .stagger-grid .reveal:nth-child(5) {
+      transition-delay: 0.28s;
+    }
+
+    .stagger-grid .reveal:nth-child(6) {
+      transition-delay: 0.35s;
+    }
   </style>
 </head>
 
@@ -327,7 +390,8 @@
   <nav>
     <div class="container mx-auto px-5 py-4 flex justify-between items-center">
       <a href="index.html" class="flex items-center gap-3 text-white no-underline">
-        <img src="https://i.ibb.co/TMg4r6G7/Profile-Logo-01.png" alt="Rajoddha Logo" class="w-8 h-8 object-contain" loading="lazy" />
+        <img src="https://i.ibb.co/TMg4r6G7/Profile-Logo-01.png" alt="Rajoddha Logo" class="w-8 h-8 object-contain"
+          loading="lazy" />
         <div class="leading-tight">
           <span class="font-semibold text-base">Rajoddha</span>
           <span class="font-semibold text-base" style="color: var(--accent);"> Media & Publicity LLP</span>
@@ -348,7 +412,7 @@
       <!-- Hamburger -->
       <button class="md:hidden text-white p-1 focus:outline-none" id="menu-toggle" aria-label="Open menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
         </svg>
       </button>
     </div>
@@ -359,7 +423,7 @@
     <div class="flex justify-end p-5">
       <button class="text-white focus:outline-none" id="close-menu" aria-label="Close menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
         </svg>
       </button>
     </div>
@@ -367,7 +431,8 @@
       <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="index.html#hero">Home</a>
       <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="index.html#services">Services</a>
       <a style="color: var(--accent);" class="mobile-nav-item" href="podcast.html">Podcasts</a>
-      <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="index.html#testimonials">Client Reviews</a>
+      <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="index.html#testimonials">Client
+        Reviews</a>
       <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="index.html#clientele">Clientele</a>
       <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="index.html#about">About</a>
       <a class="text-white hover:text-yellow-400 transition mobile-nav-item" href="index.html#contact">Contact</a>
@@ -378,7 +443,8 @@
 
     <!-- ── PAGE HEADER ── -->
     <section class="page-header">
-      <div class="container mx-auto flex flex-col md:flex-row items-start md:items-end justify-between gap-8 relative z-10">
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-start md:items-end justify-between gap-8 relative z-10">
         <div>
           <p class="section-label">Rajoddha Media</p>
           <h1 class="page-title">Podcasts</h1>
@@ -388,7 +454,7 @@
         </div>
         <a href="index.html" class="back-btn flex-shrink-0">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
+            <path d="M19 12H5M12 19l-7-7 7-7" />
           </svg>
           Back Home
         </a>
@@ -402,16 +468,15 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 stagger-grid">
 
           <!-- Episode 1 -->
-          <a href="https://youtu.be/0lFO0uIjdFA" target="_blank" rel="noopener noreferrer" class="podcast-card reveal">
+          <a href="https://youtu.be/v9LS8ri4aic" target="_blank" rel="noopener noreferrer" class="podcast-card reveal">
             <div class="thumb-container">
-              <img
-                class="thumb"
-                src="https://img.youtube.com/vi/0lFO0uIjdFA/maxresdefault.jpg"
-                alt="Sahyadri Health Talks"
-                onerror="this.src='https://img.youtube.com/vi/0lFO0uIjdFA/hqdefault.jpg'"
-              />
-              <div class="play-overlay"><div class="play-btn">▶</div></div>
+              <img class="thumb" src="https://img.youtube.com/vi/v9LS8ri4aic/maxresdefault.jpg"
+                alt="Sahyadri Health Talks" onerror="this.src='https://img.youtube.com/vi/v9LS8ri4aic/hqdefault.jpg'" />
+              <div class="play-overlay">
+                <div class="play-btn">▶</div>
+              </div>
             </div>
+
             <div class="card-body">
               <span class="card-tag">▶ Episode 1</span>
               <h2>Sahyadri Health Talks</h2>
@@ -420,20 +485,18 @@
           </a>
 
           <!-- Episode 2 -->
-          <a href="https://youtu.be/Rps1l7vVnrQ" target="_blank" rel="noopener noreferrer" class="podcast-card reveal">
+          <a href="https://youtu.be/Jr5VADtMg7o" target="_blank" rel="noopener noreferrer" class="podcast-card reveal">
             <div class="thumb-container">
-              <img
-                class="thumb"
-                src="https://img.youtube.com/vi/Rps1l7vVnrQ/maxresdefault.jpg"
-                alt="AarthKatta by Arthkranti"
-                onerror="this.src='https://img.youtube.com/vi/Rps1l7vVnrQ/hqdefault.jpg'"
-                loading="lazy"
-              />
-              <div class="play-overlay"><div class="play-btn">▶</div></div>
+              <img class="thumb" src="https://img.youtube.com/vi/Jr5VADtMg7o/maxresdefault.jpg"
+                alt="New Podcast Episode" onerror="this.src='https://img.youtube.com/vi/Jr5VADtMg7o/hqdefault.jpg'"
+                loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-btn">▶</div>
+              </div>
             </div>
+
             <div class="card-body">
               <span class="card-tag">▶ Episode 2</span>
-              <!-- FIX: Title corrected to match index.html testimonials data -->
               <h2>AarthKatta by Arthkranti</h2>
               <p>An engaging conversation from the Rajoddha Media studio. Click to watch on YouTube.</p>
             </div>
@@ -442,14 +505,11 @@
           <!-- Episode 3 -->
           <a href="https://youtu.be/GuczPpMOMPw" target="_blank" rel="noopener noreferrer" class="podcast-card reveal">
             <div class="thumb-container">
-              <img
-                class="thumb"
-                src="https://img.youtube.com/vi/GuczPpMOMPw/maxresdefault.jpg"
-                alt="Dr Boltoy Podcast"
-                onerror="this.src='https://img.youtube.com/vi/GuczPpMOMPw/hqdefault.jpg'"
-                loading="lazy"
-              />
-              <div class="play-overlay"><div class="play-btn">▶</div></div>
+              <img class="thumb" src="https://img.youtube.com/vi/GuczPpMOMPw/maxresdefault.jpg" alt="Dr Boltoy Podcast"
+                onerror="this.src='https://img.youtube.com/vi/GuczPpMOMPw/hqdefault.jpg'" loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-btn">▶</div>
+              </div>
             </div>
             <div class="card-body">
               <span class="card-tag">▶ Episode 3</span>
@@ -462,14 +522,11 @@
           <!-- Episode 4 -->
           <a href="https://youtu.be/biaVezrXEro" target="_blank" rel="noopener noreferrer" class="podcast-card reveal">
             <div class="thumb-container">
-              <img
-                class="thumb"
-                src="https://img.youtube.com/vi/biaVezrXEro/maxresdefault.jpg"
-                alt="Rajoddha Talks"
-                onerror="this.src='https://img.youtube.com/vi/biaVezrXEro/hqdefault.jpg'"
-                loading="lazy"
-              />
-              <div class="play-overlay"><div class="play-btn">▶</div></div>
+              <img class="thumb" src="https://img.youtube.com/vi/biaVezrXEro/maxresdefault.jpg" alt="Rajoddha Talks"
+                onerror="this.src='https://img.youtube.com/vi/biaVezrXEro/hqdefault.jpg'" loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-btn">▶</div>
+              </div>
             </div>
             <div class="card-body">
               <span class="card-tag">▶ Episode 4</span>
@@ -481,14 +538,12 @@
           <!-- Episode 5 -->
           <a href="https://youtu.be/vl8oCm4VbiU" target="_blank" rel="noopener noreferrer" class="podcast-card reveal">
             <div class="thumb-container">
-              <img
-                class="thumb"
-                src="https://img.youtube.com/vi/vl8oCm4VbiU/maxresdefault.jpg"
+              <img class="thumb" src="https://img.youtube.com/vi/vl8oCm4VbiU/maxresdefault.jpg"
                 alt="VK and The Good Doc by Sahyadri Hospital"
-                onerror="this.src='https://img.youtube.com/vi/vl8oCm4VbiU/hqdefault.jpg'"
-                loading="lazy"
-              />
-              <div class="play-overlay"><div class="play-btn">▶</div></div>
+                onerror="this.src='https://img.youtube.com/vi/vl8oCm4VbiU/hqdefault.jpg'" loading="lazy" />
+              <div class="play-overlay">
+                <div class="play-btn">▶</div>
+              </div>
             </div>
             <div class="card-body">
               <span class="card-tag">▶ Episode 5</span>
@@ -499,8 +554,8 @@
 
           <!-- CTA card -->
           <a href="https://www.youtube.com/@rajoddhamediaofficial7350" target="_blank" rel="noopener noreferrer"
-             class="podcast-card reveal flex flex-col items-center justify-center text-center"
-             style="min-height: 260px; border-style: dashed;">
+            class="podcast-card reveal flex flex-col items-center justify-center text-center"
+            style="min-height: 260px; border-style: dashed;">
             <div style="font-size: 2.5rem; margin-bottom: 14px; color: var(--accent);">▶</div>
             <h2 style="font-size: 1.1rem; margin-bottom: 8px;">More on YouTube</h2>
             <p style="font-size: 0.85rem;">Visit our channel for the full episode library and latest releases.</p>
@@ -516,13 +571,17 @@
   <!-- FIX: Added social links to footer to match index.html -->
   <footer class="py-10 text-center text-sm text-gray-500">
     <div class="flex items-center justify-center gap-5 mb-5">
-      <a href="https://instagram.com/rajoddhamediapublicityllp" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition">
-        <img src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram" class="w-7 h-7" loading="lazy" />
+      <a href="https://instagram.com/rajoddhamediapublicityllp" target="_blank" rel="noopener noreferrer"
+        class="hover:opacity-75 transition">
+        <img src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram" class="w-7 h-7"
+          loading="lazy" />
       </a>
-      <a href="https://www.youtube.com/@rajoddhamediaofficial7350" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition">
+      <a href="https://www.youtube.com/@rajoddhamediaofficial7350" target="_blank" rel="noopener noreferrer"
+        class="hover:opacity-75 transition">
         <img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube" class="w-7 h-7" loading="lazy" />
       </a>
-      <a href="https://wa.me/917263852727" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition">
+      <a href="https://wa.me/917263852727" target="_blank" rel="noopener noreferrer"
+        class="hover:opacity-75 transition">
         <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" class="w-7 h-7" loading="lazy" />
       </a>
       <a href="mailto:rajoddhamedia@gmail.com" class="hover:opacity-75 transition">
@@ -533,20 +592,21 @@
   </footer>
 
   <!-- ── FLOATING WHATSAPP ── -->
-  <a href="https://wa.me/917263852727" target="_blank" rel="noopener noreferrer" id="whatsappBtn" aria-label="Chat on WhatsApp">
+  <a href="https://wa.me/917263852727" target="_blank" rel="noopener noreferrer" id="whatsappBtn"
+    aria-label="Chat on WhatsApp">
     <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp" loading="lazy" />
   </a>
 
   <script>
     document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-    const menuToggle  = document.getElementById('menu-toggle');
+    const menuToggle = document.getElementById('menu-toggle');
     const mobilePanel = document.getElementById('mobile-menu-panel');
-    const closeMenu   = document.getElementById('close-menu');
+    const closeMenu = document.getElementById('close-menu');
     const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
 
-    menuToggle.addEventListener('click',  () => mobilePanel.classList.add('open'));
-    closeMenu.addEventListener('click',   () => mobilePanel.classList.remove('open'));
+    menuToggle.addEventListener('click', () => mobilePanel.classList.add('open'));
+    closeMenu.addEventListener('click', () => mobilePanel.classList.remove('open'));
     mobileNavItems.forEach(item => item.addEventListener('click', () => mobilePanel.classList.remove('open')));
 
     // FIX: Observe each card individually for staggered reveal
@@ -564,4 +624,5 @@
   </script>
 
 </body>
+
 </html>

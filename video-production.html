@@ -1,0 +1,1599 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ibb.co https://img.icons8.com https://img.youtube.com https://images.pexels.com; connect-src 'self'; frame-src https://www.youtube.com;" />
+  <title>Video Production — Rajoddha Media & Publicity LLP</title>
+  <meta name="description"
+    content="Reels, Long-Form Videos, Documentary Films, and Corporate Videos — crafted by Rajoddha Media & Publicity LLP, Pune." />
+  <meta property="og:title" content="Video Production — Rajoddha Media & Publicity LLP" />
+  <meta property="og:description"
+    content="Reels, Long-Form Videos, Documentary Films, and Corporate Videos by Rajoddha Media." />
+  <meta property="og:image" content="https://i.ibb.co/TMg4r6G7/Profile-Logo-01.png" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --accent: #ffa300;
+      --accent-dark: #cc8200;
+      --blue: #00aeef;
+      --bg: #000000;
+      --surface: #0d0d0d;
+      --surface2: #141414;
+      --border: #1e1e1e;
+      --border2: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888888;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── Typography ── */
+    .display {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3rem);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      display: inline-block;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-link {
+      color: #aaa;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #fff;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* ── Mobile Menu ── */
+    #mobile-menu-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.97);
+      z-index: 200;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+    }
+
+    #mobile-menu-panel.open { transform: translateX(0); }
+
+    /* ── Hero ── */
+    .vp-hero {
+      position: relative;
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .vp-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.pexels.com/photos/10024703/pexels-photo-10024703.jpeg?auto=compress&cs=tinysrgb&h=900&w=1600');
+      background-size: cover;
+      background-position: center;
+      animation: heroZoom 18s ease-in-out infinite alternate;
+    }
+
+    .vp-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.6) 100%);
+    }
+
+    .vp-hero-content { position: relative; z-index: 1; }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.5rem, 8vw, 5.5rem);
+      text-transform: uppercase;
+      line-height: 1.05;
+      letter-spacing: 1px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      transition: background 0.2s, transform 0.2s;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-cta:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1); }
+      to   { transform: scale(1.08); }
+    }
+
+    /* ── Tab Navigation ── */
+    .vp-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      padding: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 60px;
+      max-width: fit-content;
+      margin: 0 auto;
+    }
+
+    .vp-tab {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+      white-space: nowrap;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .vp-tab .tab-icon {
+      font-size: 1.15rem;
+      line-height: 1;
+      transition: transform 0.25s ease;
+    }
+
+    .vp-tab:hover {
+      color: #fff;
+      background: var(--surface2);
+    }
+
+    .vp-tab:hover .tab-icon { transform: scale(1.15); }
+
+    .vp-tab.active {
+      color: #000;
+      background: var(--accent);
+    }
+
+    .vp-tab.active .tab-icon { transform: scale(1.1); }
+
+    /* ── Tab Content ── */
+    .vp-panel { display: none; }
+
+    .vp-panel.active {
+      display: block;
+      animation: panelIn 0.5s ease;
+    }
+
+    @keyframes panelIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Showcase Layout ── */
+    .vp-showcase {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .vp-showcase {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 56px;
+      }
+    }
+
+    .vp-showcase-img-wrap {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--border2);
+      aspect-ratio: 16/10;
+    }
+
+    .vp-showcase-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .vp-showcase-img-wrap:hover img { transform: scale(1.04); }
+
+    .vp-showcase-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.55) 100%);
+      pointer-events: none;
+    }
+
+    .vp-showcase-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 2;
+      background: rgba(255,163,0,0.9);
+      color: #000;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 50px;
+      backdrop-filter: blur(4px);
+    }
+
+    .vp-cat-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    .vp-cat-accent { color: var(--accent); }
+
+    .vp-cat-desc {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .vp-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 480px) {
+      .vp-features { grid-template-columns: 1fr; }
+    }
+
+    .vp-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .vp-feature:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .vp-feature-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      box-shadow: 0 0 12px rgba(255,163,0,0.5);
+    }
+
+    .vp-feature span {
+      font-size: 0.85rem;
+      color: #ddd;
+      font-weight: 500;
+    }
+
+    /* ── Video Gallery Cards ── */
+    .vid-card {
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      display: block;
+      text-decoration: none;
+    }
+
+    .vid-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(255, 163, 0, 0.18);
+    }
+
+    .vid-card .thumb-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vid-card img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: #000;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .vid-card:hover img { transform: scale(1.05); }
+
+    .vid-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.3);
+      transition: background 0.3s;
+    }
+
+    .vid-card:hover .vid-play-overlay {
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .vid-play-btn {
+      width: 52px;
+      height: 52px;
+      background: rgba(255, 0, 0, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #fff;
+      transition: transform 0.3s;
+    }
+
+    /* Instagram play button */
+    .instagram-card .vid-play-btn {
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    }
+
+    .vid-card:hover .vid-play-btn { transform: scale(1.15); }
+
+    .vid-card-body {
+      padding: 14px 16px 18px;
+    }
+
+    .vid-card-body h3 {
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .vid-card-body p {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    /* ── Stats Strip ── */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .stats-strip { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 24px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 16px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .stat-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 2.4rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 8px;
+    }
+
+    /* ── WhatsApp Float ── */
+    #whatsappBtn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      background: #25D366;
+      padding: 13px;
+      border-radius: 50%;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    #whatsappBtn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.6);
+    }
+
+    #whatsappBtn img {
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAVBAR ── -->
+
+  <nav>
+    <div class="container mx-auto px-5 py-4 flex justify-between items-center">
+
+      <a href="index.html" class="flex items-center gap-3 text-white no-underline">
+
+        <img
+          src="https://i.ibb.co/TMg4r6G7/Profile-Logo-01.png"
+          alt="Rajoddha Logo"
+          class="w-8 h-8 object-contain"
+          loading="lazy"
+        />
+
+        <div class="leading-tight">
+          <span class="font-semibold text-base">Rajoddha</span>
+          <span
+            class="font-semibold text-base"
+            style="color: var(--accent);"
+          >
+            Media & Publicity LLP
+          </span>
+        </div>
+
+      </a>
+
+      <!-- Desktop nav -->
+
+      <div class="hidden md:flex items-center gap-7" id="nav-menu">
+
+        <a class="nav-link" href="index.html">Home</a>
+
+        <a class="nav-link" href="index.html#services">
+          Services
+        </a>
+
+        <a class="nav-link" href="podcast.html">
+          Podcasts
+        </a>
+
+        <a class="nav-link" href="index.html#testimonials">
+          Client Reviews
+        </a>
+
+        <a class="nav-link" href="index.html#clientele">
+          Clientele
+        </a>
+
+        <a class="nav-link" href="index.html#about">
+          About
+        </a>
+
+        <a class="nav-link" href="index.html#contact">
+          Contact
+        </a>
+
+      </div>
+
+      <!-- Hamburger -->
+
+      <button
+        class="md:hidden text-white p-1 focus:outline-none"
+        id="menu-toggle"
+        aria-label="Open menu"
+      >
+
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M4 6h16M4 12h16M4 18h16"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+
+  <div id="mobile-menu-panel">
+
+    <div class="flex justify-end p-5">
+
+      <button
+        class="text-white focus:outline-none"
+        id="close-menu"
+        aria-label="Close menu"
+      >
+
+        <svg
+          class="w-7 h-7"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M6 18L18 6M6 6l12 12"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+
+      </button>
+
+    </div>
+
+    <div
+      class="flex flex-col items-center justify-center gap-10 pt-8 pb-12 text-xl font-semibold"
+    >
+
+      <a
+        class="text-white hover:text-yellow-400 transition mobile-nav-item"
+        href="index.html"
+      >
+        Home
+      </a>
+
+      <a
+        class="text-white hover:text-yellow-400 transition mobile-nav-item"
+        href="index.html#services"
+      >
+        Services
+      </a>
+
+      <a
+        class="text-white hover:text-yellow-400 transition mobile-nav-item"
+        href="podcast.html"
+      >
+        Podcasts
+      </a>
+
+      <a
+        class="text-white hover:text-yellow-400 transition mobile-nav-item"
+        href="index.html#testimonials"
+      >
+        Client Reviews
+      </a>
+
+      <a
+        class="text-white hover:text-yellow-400 transition mobile-nav-item"
+        href="index.html#clientele"
+      >
+        Clientele
+      </a>
+
+      <a
+        class="text-white hover:text-yellow-400 transition mobile-nav-item"
+        href="index.html#about"
+      >
+        About
+      </a>
+
+      <a
+        class="text-white hover:text-yellow-400 transition mobile-nav-item"
+        href="index.html#contact"
+      >
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+  <main>
+
+    <!-- ── HERO ── -->
+
+    <section class="vp-hero">
+
+      <div class="vp-hero-bg"></div>
+
+      <div class="vp-hero-overlay"></div>
+
+      <div
+        class="vp-hero-content container mx-auto px-6 text-center"
+      >
+
+        <p
+          class="text-sm font-semibold uppercase tracking-widest mb-4"
+          style="color: var(--accent);"
+        >
+          Rajoddha Media · Video Production
+        </p>
+
+        <h1 class="hero-title text-white mb-6">
+
+          Stories That Move.<br />
+
+          <span style="color: var(--accent);">
+            Pictures
+          </span>
+          That Speak.
+
+        </h1>
+
+        <p
+          class="text-gray-300 text-lg mb-10 max-w-2xl mx-auto leading-relaxed"
+        >
+          From scroll-stopping reels to cinematic documentaries — we produce video content
+          that captures attention and drives results across every screen.
+        </p>
+
+        <a class="hero-cta" href="#tabs">
+
+          Explore Our Work
+
+          <svg
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ── STATS STRIP ── -->
+
+    <section
+      class="py-12 px-6"
+      style="background: var(--surface);"
+    >
+
+      <div class="container mx-auto max-w-4xl">
+
+        <div class="stats-strip reveal">
+
+          <div class="stat-item">
+
+            <div class="stat-num">
+              500+
+            </div>
+
+            <div class="stat-label">
+              Videos Delivered
+            </div>
+
+          </div>
+
+          <div class="stat-item">
+
+            <div class="stat-num">
+              4K
+            </div>
+
+            <div class="stat-label">
+              Cinema Quality
+            </div>
+
+          </div>
+
+          <div class="stat-item">
+
+            <div class="stat-num">
+              50+
+            </div>
+
+            <div class="stat-label">
+              Brands Served
+            </div>
+
+          </div>
+
+          <div class="stat-item">
+
+            <div class="stat-num">
+              8+
+            </div>
+
+            <div class="stat-label">
+              Years Experience
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ── TABS ── -->
+
+    <section
+      id="tabs"
+      class="py-20 px-6"
+    >
+
+      <div class="container mx-auto">
+
+        <div
+          class="text-center mb-10 reveal"
+        >
+
+          <h2 class="section-title">
+            Our Video Categories
+          </h2>
+
+          <p
+            class="text-gray-400 mt-6 max-w-xl mx-auto"
+          >
+            Four distinct formats, one standard of excellence. Pick a category to explore our work.
+          </p>
+
+        </div>
+
+        <!-- Tab buttons -->
+
+        <div
+          class="vp-tabs reveal"
+          role="tablist"
+        >
+
+          <button
+            class="vp-tab active"
+            data-tab="reels"
+            role="tab"
+            aria-selected="true"
+          >
+            Reels
+          </button>
+
+          <button
+            class="vp-tab"
+            data-tab="longform"
+            role="tab"
+            aria-selected="false"
+          >
+            Long Form
+          </button>
+
+          <button
+            class="vp-tab"
+            data-tab="documentary"
+            role="tab"
+            aria-selected="false"
+          >
+            Documentary
+          </button>
+
+          <button
+            class="vp-tab"
+            data-tab="corporate"
+            role="tab"
+            aria-selected="false"
+          >
+            Corporate
+          </button>
+
+        </div>
+
+        <!-- ── Panel: Reels ── -->
+
+        <div
+          class="vp-panel active"
+          id="panel-reels"
+          role="tabpanel"
+          style="margin-top: 40px;"
+        >
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"
+            id="reels-grid"
+          ></div>
+
+        </div>
+
+        <!-- ── Panel: Long-Form ── -->
+
+        <div
+          class="vp-panel"
+          id="panel-longform"
+          role="tabpanel"
+          style="margin-top: 40px;"
+        >
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"
+            id="longform-grid"
+          ></div>
+
+        </div>
+
+        <!-- ── Panel: Documentary ── -->
+
+        <div
+          class="vp-panel"
+          id="panel-documentary"
+          role="tabpanel"
+          style="margin-top: 40px;"
+        >
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"
+            id="documentary-grid"
+          ></div>
+
+        </div>
+
+        <!-- ── Panel: Corporate ── -->
+
+        <div
+          class="vp-panel"
+          id="panel-corporate"
+          role="tabpanel"
+          style="margin-top: 40px;"
+        >
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"
+            id="corporate-grid"
+          ></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ── CTA BAND ── -->
+
+    <section
+      class="py-20 px-6"
+      style="background: var(--surface);"
+    >
+
+      <div
+        class="container mx-auto text-center max-w-2xl reveal"
+      >
+
+        <h2 class="section-title">
+          Ready to Roll?
+        </h2>
+
+        <p
+          class="text-gray-400 mt-6 mb-8"
+        >
+          Tell us about your project and we'll craft a video strategy that fits your goals, timeline, and budget.
+        </p>
+
+        <a
+          href="index.html#contact"
+          class="hero-cta"
+        >
+
+          Get In Touch
+
+          <svg
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+
+  <footer
+    class="py-8 text-center text-sm text-gray-500"
+  >
+
+    <p>
+      ©
+      <span id="footer-year"></span>
+      Rajoddha Media & Publicity LLP. All rights reserved.
+    </p>
+
+  </footer>
+
+  <!-- ── FLOATING WHATSAPP ── -->
+
+  <a
+    href="https://wa.me/917263852727"
+    target="_blank"
+    rel="noopener noreferrer"
+    id="whatsappBtn"
+    aria-label="Chat on WhatsApp"
+  >
+
+    <img
+      src="https://img.icons8.com/color/96/whatsapp--v1.png"
+      alt="WhatsApp"
+      loading="lazy"
+    />
+
+  </a>
+
+  <script>
+
+    // Auto copyright year
+
+    document.getElementById('footer-year').textContent =
+      new Date().getFullYear();
+
+
+    // Mobile menu
+
+    const menuToggle =
+      document.getElementById('menu-toggle');
+
+    const mobilePanel =
+      document.getElementById('mobile-menu-panel');
+
+    const closeMenu =
+      document.getElementById('close-menu');
+
+    const mobileNavItems =
+      document.querySelectorAll('.mobile-nav-item');
+
+
+    menuToggle.addEventListener('click', () =>
+      mobilePanel.classList.add('open')
+    );
+
+
+    closeMenu.addEventListener('click', () =>
+      mobilePanel.classList.remove('open')
+    );
+
+
+    mobileNavItems.forEach(item =>
+      item.addEventListener('click', () =>
+        mobilePanel.classList.remove('open')
+      )
+    );
+
+
+    // ── Tab switching ──
+
+    const tabs =
+      document.querySelectorAll('.vp-tab');
+
+    const panels =
+      document.querySelectorAll('.vp-panel');
+
+
+    tabs.forEach(tab => {
+
+      tab.addEventListener('click', () => {
+
+        const target =
+          tab.dataset.tab;
+
+
+        tabs.forEach(t => {
+
+          t.classList.remove('active');
+
+          t.setAttribute(
+            'aria-selected',
+            'false'
+          );
+
+        });
+
+
+        tab.classList.add('active');
+
+        tab.setAttribute(
+          'aria-selected',
+          'true'
+        );
+
+
+        panels.forEach(p =>
+          p.classList.remove('active')
+        );
+
+
+        const panel =
+          document.getElementById(
+            'panel-' + target
+          );
+
+
+        if (panel) {
+          panel.classList.add('active');
+        }
+
+
+        // Scroll tabs into view on mobile
+
+        if (window.innerWidth < 768) {
+
+          tab.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+          });
+
+        }
+
+      });
+
+    });
+
+
+    // ── Scroll reveal ──
+
+    const reveals =
+      document.querySelectorAll('.reveal');
+
+
+    const revealObserver =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add(
+                'visible'
+              );
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.15
+        }
+      );
+
+
+    reveals.forEach(el =>
+      revealObserver.observe(el)
+    );
+
+
+    // ─────────────────────────────────────
+    // VIDEO DATA
+    // ─────────────────────────────────────
+
+    const videoData = {
+
+      // ─────────────────────────────────
+      // REELS
+      // Instagram Reel URLs
+      // ─────────────────────────────────
+
+      reels: [
+
+  {
+    platform: 'youtube',
+    id: 'Pqs6Hb3Cu0s',
+    title: 'Reels 1',
+    subtitle: 'YouTube Short'
+  },      
+
+  {
+    platform: 'youtube',
+    id: 'HnfxQwr0jFw',
+    title: 'Reels 2',
+    subtitle: 'YouTube Short'
+  },
+
+  {
+    platform: 'youtube',
+    id: 'sIDQjT9gNzs',
+    title: 'Reels 3',
+    subtitle: 'YouTube Short'
+  }, 
+
+  {
+    platform: 'youtube',
+    id: 'G2zDwpKtHK8',
+    title: 'Reels 4',
+    subtitle: 'YouTube Short'
+  },
+
+  {
+    platform: 'youtube',
+    id: '5uHHTgNkwmY',
+    title: 'Reels 5',
+    subtitle: 'YouTube Short'
+  },
+
+  {
+    platform: 'youtube',
+    id: '8-BljyVAHB8',
+    title: 'Reels 6',
+    subtitle: 'YouTube Short'
+  },
+
+  {
+    platform: 'youtube',
+    id: 'GtR_6xoqG0I',
+    title: 'Reels 7',
+    subtitle: 'YouTube Short'
+  },
+
+  {
+    platform: 'instagram',
+    url: 'https://www.instagram.com/reel/DaVX1KaFJyJ/',
+    thumbnail:
+      'https://images.pexels.com/photos/10024703/pexels-photo-10024703.jpeg?auto=compress&cs=tinysrgb&h=900&w=1600',
+    title: 'Reels 8',
+    subtitle: 'Instagram Reel'
+  }
+
+],
+
+
+      // ─────────────────────────────────
+      // LONG FORM
+      // YouTube video IDs
+      // ─────────────────────────────────
+
+     longform: [
+  {
+    id: 'SOCOIByPzMg',
+    title: 'Long Form 1',
+    subtitle: 'Long Form Video'
+  },
+
+  {
+    id: 'WtW2QXFLYzA',
+    title: 'Long Form Feature 2',
+    subtitle: 'Long Form Video'
+  }
+
+],
+  
+      // ─────────────────────────────────
+      // DOCUMENTARY
+      // YouTube video IDs
+      // ─────────────────────────────────
+
+      documentary: [
+
+        {
+          id: 'tVj0ZTS4VF4',
+          title: 'Journey of a Brand — Alsu',
+          subtitle: '12-min documentary'
+        },
+
+        {
+          id: 'CevopZiL3Jg',
+          title: 'Cultural Feature — Vaayu',
+          subtitle: 'On-location film'
+        },
+
+        {
+          id: 'jNQXAC9IVRw',
+          title: 'Social Impact — Smile Meditation',
+          subtitle: 'Community story'
+        }
+
+      ],
+
+
+      // ─────────────────────────────────
+      // CORPORATE
+      // YouTube video IDs
+      // ─────────────────────────────────
+
+      corporate: [
+
+        {
+          id: 'oq0yS5kGzGg',
+          title: 'Company Profile — Manhor Group',
+          subtitle: 'Corporate film'
+        },
+
+        {
+          id: 'RgKAFK5djSk',
+          title: 'Leadership Talk — Jaydev',
+          subtitle: 'Executive interview'
+        },
+
+        {
+          id: 'ZbZQz3eQEFg',
+          title: 'Product Launch — D P Holidays',
+          subtitle: 'Launch video'
+        }
+
+      ]
+
+    };
+    
+
+    // ─────────────────────────────────────
+    // Security: HTML escape utility
+    // ─────────────────────────────────────
+
+    function escapeHTML(str) {
+
+      const d =
+        document.createElement('div');
+
+      d.appendChild(
+        document.createTextNode(
+          String(str)
+        )
+      );
+
+      return d.innerHTML;
+
+    }
+
+
+    // ─────────────────────────────────────
+    // CREATE VIDEO CARD
+    // ─────────────────────────────────────
+
+    function makeVideoCard(v) {
+
+      const a = document.createElement('a');
+
+      // ─────────────────────────────────
+      // YOUTUBE / YOUTUBE SHORT
+      // ─────────────────────────────────
+
+      if (v.platform === 'youtube' || (!v.platform && v.id)) {
+
+        const safeId = encodeURIComponent(v.id);
+
+        // YouTube Shorts open directly as Shorts.
+        a.href = `https://youtube.com/shorts/${safeId}`;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.className = 'vid-card';
+
+        const thumbWrap = document.createElement('div');
+        thumbWrap.className = 'thumb-wrap';
+
+        const img = document.createElement('img');
+
+        // Try high-quality thumbnail first.
+        img.src = `https://img.youtube.com/vi/${safeId}/maxresdefault.jpg`;
+        img.alt = v.title;
+        img.loading = 'lazy';
+
+        // Fall back to standard YouTube thumbnail.
+        img.addEventListener('error', function () {
+
+          this.src = `https://img.youtube.com/vi/${safeId}/hqdefault.jpg`;
+          this.onerror = null;
+
+        });
+
+        const overlay = document.createElement('div');
+        overlay.className = 'vid-play-overlay';
+
+        const btn = document.createElement('div');
+        btn.className = 'vid-play-btn';
+        btn.textContent = '\u25B6';
+
+        overlay.appendChild(btn);
+        thumbWrap.appendChild(img);
+        thumbWrap.appendChild(overlay);
+
+        const body = document.createElement('div');
+        body.className = 'vid-card-body';
+
+        const h3 = document.createElement('h3');
+        h3.textContent = v.title;
+
+        const p = document.createElement('p');
+        p.textContent = v.subtitle;
+
+        body.appendChild(h3);
+        body.appendChild(p);
+
+        a.appendChild(thumbWrap);
+        a.appendChild(body);
+
+        return a;
+      }
+
+
+      // ─────────────────────────────────
+      // INSTAGRAM REEL
+      // ─────────────────────────────────
+
+      if (v.platform === 'instagram') {
+
+        a.href = v.url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.className = 'vid-card instagram-card';
+
+        const thumbWrap = document.createElement('div');
+        thumbWrap.className = 'thumb-wrap';
+
+        const img = document.createElement('img');
+
+        img.src = v.thumbnail;
+        img.alt = v.title;
+        img.loading = 'lazy';
+
+        // Fallback image if Instagram thumbnail is unavailable.
+        img.addEventListener('error', function () {
+
+          this.src =
+            'https://images.pexels.com/photos/10024703/pexels-photo-10024703.jpeg?auto=compress&cs=tinysrgb&h=900&w=1600';
+
+          this.onerror = null;
+
+        });
+
+        const overlay = document.createElement('div');
+        overlay.className = 'vid-play-overlay';
+
+        const btn = document.createElement('div');
+        btn.className = 'vid-play-btn';
+        btn.textContent = '\u25B6';
+
+        overlay.appendChild(btn);
+        thumbWrap.appendChild(img);
+        thumbWrap.appendChild(overlay);
+
+        const body = document.createElement('div');
+        body.className = 'vid-card-body';
+
+        const h3 = document.createElement('h3');
+        h3.textContent = v.title;
+
+        const p = document.createElement('p');
+        p.textContent = v.subtitle;
+
+        body.appendChild(h3);
+        body.appendChild(p);
+
+        a.appendChild(thumbWrap);
+        a.appendChild(body);
+
+        return a;
+      }
+
+
+      // ─────────────────────────────────
+      // INVALID / UNKNOWN PLATFORM
+      // ─────────────────────────────────
+
+      console.warn('Unsupported video platform:', v);
+      return null;
+    }
+
+    // ─────────────────────────────────────
+    // POPULATE GRID
+    // ─────────────────────────────────────
+
+    function populateGrid(
+      gridId,
+      videos
+    ) {
+
+      const grid =
+        document.getElementById(
+          gridId
+        );
+
+
+      if (!grid) return;
+
+
+      grid.innerHTML =
+        '';
+
+
+      videos.forEach(v => {
+
+        const card = makeVideoCard(v);
+
+        if (card) {
+          grid.appendChild(card);
+
+          // Make dynamically-created video cards visible.
+          requestAnimationFrame(() => {
+            card.classList.add('visible');
+          });
+        }
+
+      });
+
+    }
+
+
+    // ─────────────────────────────────────
+    // LOAD VIDEO CATEGORIES
+    // ─────────────────────────────────────
+
+    populateGrid(
+      'reels-grid',
+      videoData.reels
+    );
+
+
+    populateGrid(
+      'longform-grid',
+      videoData.longform
+    );
+
+
+    populateGrid(
+      'documentary-grid',
+      videoData.documentary
+    );
+
+
+    populateGrid(
+      'corporate-grid',
+      videoData.corporate
+    );
+
+  </script>
+
+</body>
+
+</html>
